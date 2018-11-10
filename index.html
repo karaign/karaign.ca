@@ -28,8 +28,43 @@ Congratulations! You've just won the Jef and Paul award for excellence in viewin
   }
 </style>
 
+<script>
+  var sites = [
+  "https://www.rrrgggbbb.com/",
+  "http://www.blankwindows.com/",
+  "http://www.sanger.dk/",
+  "https://mrdoob.com/projects/chromeexperiments/google-space/",
+  "http://www.staggeringbeauty.com/",
+  "http://www.trypap.com/",
+  "http://www.omfgdogs.com/",
+  "http://www.grandpanoclothes.com/",
+  "http://www.heeeeeeeey.com/",
+  "http://www.cat-bounce.com/",
+  "http://www.theinternetfireplace.com/",
+  "https://isitchristmas.com/",
+  "http://www.randomcolour.com/",
+  "http://www.hasthelargehadroncolliderdestroyedtheworldyet.com/",
+  "http://www.ihasabucket.com/",
+  "http://www.ferryhalim.com/orisinal/g3/cats.htm",
+  "http://www.eelslap.com/",
+  "http://www.koalastothemax.com/",
+  "http://www.sometimesredsometimesblue.com/",
+  "http://www.patience-is-a-virtue.org/",
+  "https://mrdoob.com/lab/javascript/effects/ie6/",
+  "http://www.badgerbadgerbadger.com/",
+  "http://www.puffgames.com/bubblewrap/",
+  "http://www.rock-paper-scissors-game.com/",
+  "http://www.hmpg.net/",
+  "https://mrdoob.com/lab/javascript/effects/water/02/"
+  ];
+  
+  function openNextSite() {
+    open(sites(Math.floor(Math.random() * sites.length)));
+  }
+</script>
+
 <div class="main">
   <h1>Sorry :/</h1>
   <h2>This website is currently unavailable.</h2>
-  <h3>Why not go <a href="http://www.theuselessweb.com/" target="_blank">somewhere else</a>? </h3>
+  <h3>Why not go <a href="javascript:openNextSite()" target="_blank">somewhere else</a>? </h3>
 </div>
