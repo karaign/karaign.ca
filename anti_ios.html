@@ -25,7 +25,7 @@
 				var index = letters.indexOf(originalText[i]);
 
 				if (index !== -1) {
-					result += "\\" + special[index * 2] + special[index * 2 + 1];
+					result += "\\" + special[index * 2] + special[index * 2 + 1] + "\u200B";
 				} else {
 					result += " ";
 				}
