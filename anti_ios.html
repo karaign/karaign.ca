@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Discord anti-iOS message generator</title>
+	<meta charset="UTF-8">
+</head>
+<body>
+	<p><textarea id="input"></textarea></p>
+	<p><button id="btn">Transform!</button></p>
+	<p><code id="output"></code></p>
+
+	<script type="text/javascript" charset="utf-8">
+		var input = document.querySelector("#input");
+		var btn = document.querySelector("#btn");
+		var output = document.querySelector("#output");
+
+		var letters = "abcdefghijklmnopqrstuvwxyz";
+		var special = "🇦🇧🇨🇩🇪🇫🇬🇭🇮🇯🇰🇱🇲🇳🇴🇵🇶🇷🇸🇹🇺🇻🇼🇽🇾🇿";
+
+		btn.addEventListener('click', function(e) {
+			var originalText = input.value;
+			var result = "";
+
+			for (var i = 0; i < originalText.length; i++) {
+				var index = letters.indexOf(originalText[i]);
+
+				if (index !== -1) {
+					result += "\\" + special[index * 2] + special[index * 2 + 1];
+				} else {
+					result += " ";
+				}
+			}
+
+			output.innerText = result;
+		});
+	</script>
+</body>
+</html>
