@@ -1,0 +1,20 @@
+@use "pico";
+
+
+@font-face {
+  font-family: 'Robtronika';
+  src: url('../fonts/Robtronika.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lambda';
+  src: url('../fonts/Lambda.ttf') format('truetype');
+}
+
+header > h1 {
+  --pico-font-family: 'Robtronika';
+}
+
+header > a {
+  --pico-font-family: 'Lambda';
+}
