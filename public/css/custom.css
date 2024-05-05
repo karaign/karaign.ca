@@ -8,7 +8,18 @@
   src: url('../fonts/Lambda.ttf') format('truetype');
 }
 
+:root {
+  
+}
 
-h1 {
+header > h1 {
   --pico-font-family: 'Robtronika';
+}
+
+header > a {
+  --pico-font-family: 'Lambda';
+}
+
+footer {
+  --pico-font-size: 0.75rem;
 }
