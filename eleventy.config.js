@@ -13,6 +13,8 @@ module.exports = function (eleventyConfig) {
 		compile: async function (inputContent, inputPath) {
 			let parsedPath = path.parse(inputPath);
 
+			if (parsedPath.name.startsWith("_")) return;
+
 			let result = sass.compileString(inputContent, {
 				loadPaths: [
 					parsedPath.dir || ".",
@@ -20,6 +22,8 @@ module.exports = function (eleventyConfig) {
 					"node_modules/@picocss/pico/scss"
 				]
 			});
+
+			this.addDependencies(inputPath, result.loadedUrls);
 			return async (data) => result.css;
 		}
 	})
