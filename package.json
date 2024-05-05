@@ -11,6 +11,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "@picocss/pico": "^2.0.6",
+    "sass": "^1.76.0"
   }
 }
