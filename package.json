@@ -13,6 +13,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@picocss/pico": "^2.0.6",
+    "luxon": "^3.4.4",
     "sass": "^1.76.0"
   }
 }

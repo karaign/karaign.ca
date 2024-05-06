@@ -1,5 +1,6 @@
 const sass = require("sass");
 const path = require("node:path");
+const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
 	// Passthrough for static content
@@ -28,5 +29,13 @@ module.exports = function (eleventyConfig) {
 		}
 	})
 
+	// filters
+	eleventyConfig.addFilter("hrdate", (dateObj, fmt, tz) => {
+		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('LLLL dd, y');
+	})
+
+	eleventyConfig.addFilter("isodate", (dateObj, fmt, tz) => {
+		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toISODate();
+	})
 
 }
