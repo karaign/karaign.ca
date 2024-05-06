@@ -1,7 +1,9 @@
 @use "sass:map";
 
+$color-name: "violet";
+
 @use "pico" with (
-  $theme-color: "azure",
+  $theme-color: $color-name,
   $breakpoints: (
     sm:
       (
@@ -49,6 +51,35 @@
 
 );
 
+
+/*** Colors ***/
+
+@use "colors/utilities";
+
+@mixin light-theme {
+  --pico-background-color: var(--pico-color-#{$color-name}-50);
+}
+
+@mixin dark-theme {
+  --pico-background-color: var(--pico-color-#{$color-name}-950);
+}
+
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+ @include light-theme;
+}
+
+ @media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include dark-theme;
+  }
+}
+
+[data-theme="dark"] {
+  @include dark-theme;
+}
+
+
 /*** Typography ***/
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
@@ -93,4 +124,8 @@ hgroup {
   h1 {
     --pico-font-size: 250%
   }
+}
+
+footer {
+  font-size: 0.75em;
 }
