@@ -2,6 +2,7 @@
 
 $color-name: "violet";
 
+//TODO: Optimize CSS output by only loading necessary sheets
 @use "pico" with (
   $theme-color: $color-name,
   $breakpoints: (
@@ -110,6 +111,9 @@ nav {
     --pico-font-family: 'Robtronika';
     margin-top: auto;
     margin-bottom: auto;
+    a {
+      --pico-color: --pico-color; // what?
+    }
   }
 
   ul > li > a {
