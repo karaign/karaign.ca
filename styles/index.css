@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/*** Typography ***/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 /*!
  * Pico CSS ✨ v2.0.6 (https://picocss.com)
  * Copyright 2019-2024 - Licensed under MIT
@@ -681,17 +683,17 @@ section {
 }
 @media (min-width: 1024px) {
   .container {
-    max-width: 950px;
+    max-width: 700px;
   }
 }
 @media (min-width: 1280px) {
   .container {
-    max-width: 1200px;
+    max-width: 870px;
   }
 }
 @media (min-width: 1536px) {
   .container {
-    max-width: 1450px;
+    max-width: 1044px;
   }
 }
 
@@ -2781,10 +2783,30 @@ textarea,
   font-family: "Lambda";
   src: url("../fonts/Lambda.ttf") format("truetype");
 }
-header > h1 {
-  --pico-font-family: "Robtronika";
+:root {
+  --pico-font-family: "Open Sans";
 }
 
-header > a {
+/*** Styles ***/
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+nav h1 {
+  --pico-font-family: "Robtronika";
+  margin-top: auto;
+  margin-bottom: auto;
+}
+nav ul > li > a {
+  padding-left: 0px;
+  font-family: "Lambda";
+}
+
+hgroup {
   --pico-font-family: "Lambda";
+  padding-bottom: var(--pico-block-spacing-vertical);
+}
+hgroup h1 {
+  --pico-font-size: 250% ;
 }
