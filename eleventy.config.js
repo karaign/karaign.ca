@@ -31,7 +31,7 @@ module.exports = function (eleventyConfig) {
 
 	// filters
 	eleventyConfig.addFilter("hrdate", (dateObj, fmt, tz) => {
-		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('LLLL dd, y');
+		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('LLLL d, y');
 	})
 
 	eleventyConfig.addFilter("isodate", (dateObj, fmt, tz) => {

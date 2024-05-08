@@ -124,7 +124,6 @@ nav {
 
 hgroup {
   --pico-font-family: 'Lambda';
-  padding-bottom: var(--pico-block-spacing-vertical);
   h1 {
     --pico-font-size: 250%
   }
@@ -132,4 +131,24 @@ hgroup {
 
 footer {
   font-size: 0.75em;
+}
+
+.main-header {
+  padding-bottom: var(--pico-block-spacing-vertical);
+}
+
+.proj-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .proj-details {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .proj-details > h3 {
+    text-align: right;
+    color: var(--pico-muted-color) !important;
+    font-size: 1rem;
+  }
 }

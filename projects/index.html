@@ -1,5 +1,13 @@
 ---
 layout: root.html
+override:tags: []
+eleventyImport:
+	collections: ["project"]
 ---
 
 <p>At the moment, the only project I'm working on is this very website. Go figure.</p>
+{% for p in collections.project %}
+	<section>
+		{% render 'projview.html', proj: p.data, content: p.content %}
+	</section>
+{% endfor %}

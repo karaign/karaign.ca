@@ -1,0 +1,20 @@
+<div id="{{ proj.projname }}" class="proj-header {% if single %}main-header{% endif %}">
+  <hgroup>
+    <h2> {{ proj.projname }} </h2>
+    <h3> {{ proj.desc }} </h3>
+  </hgroup>
+  <hgroup class="proj-details">
+    <h3> {{ proj.stack | join: ", " }} </h3>
+    <h3> 
+      {% if proj.repo %}
+      [<a href="{{proj.repo}}">source</a>]
+      {% endif %}
+      {% if proj.site %}
+      [<a href="{{proj.site}}">website</a>]
+      {% endif %}
+    </h3>
+  </hgroup>
+</div>
+
+
+{{ content }}
