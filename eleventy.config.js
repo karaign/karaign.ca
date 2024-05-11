@@ -1,3 +1,5 @@
+"use strict";
+
 const sass = require("sass");
 const path = require("node:path");
 const { DateTime } = require("luxon");
@@ -30,12 +32,44 @@ module.exports = function (eleventyConfig) {
 	})
 
 	// filters
-	eleventyConfig.addFilter("hrdate", (dateObj, fmt, tz) => {
+	eleventyConfig.addFilter("hrdate", (dateObj) => {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('LLLL d, y');
 	})
 
-	eleventyConfig.addFilter("isodate", (dateObj, fmt, tz) => {
+	eleventyConfig.addFilter("shortdate", (dateObj) => {
+		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('LLLL d');
+	})
+
+	eleventyConfig.addFilter("isodate", (dateObj) => {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toISODate();
 	})
+
+	function tagLink(tag) {
+		return `<a href="/category/${tag}">${tag}</a>`
+	}
+
+	eleventyConfig.addFilter("taglink", tagLink)
+
+	eleventyConfig.addFilter("lstags", tags => {
+		return tags.filter(t => t != "post").map(tagLink).join(", ");
+	})
+
+	eleventyConfig.addFilter("alltags", coll => {
+		// this would be horrendously inefficient
+		// if not for the fact that this is pre-rendered anyway
+		return coll.reduce((tags, item) => {
+			return tags.concat(item.data.tags.filter(
+				t => tags.indexOf(t) == -1 && t != "post"
+			))
+		}, []);
+	});
+
+	eleventyConfig.addFilter("topn", (coll, n) => {
+		if (coll.length <= n) {
+			return coll;
+		} else {
+			return coll.slice(0, n);
+		}
+	})	
 
 }

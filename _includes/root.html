@@ -5,17 +5,19 @@ Congratulations! You've just won the Jef and Paul award for excellence in viewin
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>karaign (dot) ca</title>
+    <title>{{ title | default: "karaign (dot) ca"}}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
+    <meta name="author" content="Kara Ignatenko">
+    <meta name="keywords" content="{{tags | join: ', ' }}">
     <link href="/styles/index.css" rel="stylesheet">
   </head>
   <body>
     <script src="/js/randomsite.js"></script>
 
 
-    <header class="container">
+    <header class="container main-nav">
       <nav>
         <ul>
           <li>
@@ -39,7 +41,7 @@ Congratulations! You've just won the Jef and Paul award for excellence in viewin
     </main>
 
     <footer class="container">
-      <a href="javascript:openNextSite()">go elsewhere</a>
+      <a href="javascript:openNextSite()" class="secondary">go elsewhere</a>
     </footer>
   </body>
 </html>

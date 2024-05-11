@@ -1,0 +1,16 @@
+---
+layout: root.html
+pagination:
+    data: collections
+    size: 1
+    alias: tag
+    filter:
+        - all
+        - post
+        - project
+    addAllPagesToCollections: true
+permalink: /category/{{ tag }}
+---
+
+{% assign taglist = collections.post | alltags %}
+{% render 'postlist.html', postlist: collections[tag], taglist: taglist, viewingTag: tag %}

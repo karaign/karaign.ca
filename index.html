@@ -1,0 +1,25 @@
+---
+layout: root.html
+eleventyImport:
+    collections: ["post", "project"]
+---
+
+<div class="grid">
+    <div>
+        <p>site under construction...</p>
+    </div>
+    <div>
+        <section>
+          <h2>Recent posts</h2>
+          {% for p in collections.post | topn: 5 %}
+            {% render 'postpreview.html', post: p.data, url: p.url %}
+          {% endfor %}
+        </section>
+        <section>
+            <h2>Projects</h2>
+          {% for p in collections.project | topn: 5 %}
+            {% render 'projpreview.html', proj: p.data %}
+          {% endfor %}
+        </section>
+    </div>
+</div>

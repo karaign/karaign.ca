@@ -1,6 +1,9 @@
 ---
 layout: root.html
+override:tags: []
+eleventyImport:
+	collections: ["post"]
 ---
 
-<p>This is where I will post my various writings on topics I find interesting.
-You know, eventually.</p>
+{% assign taglist = collections.post | alltags %}
+{% render 'postlist.html', postlist: collections.post, taglist: taglist %}

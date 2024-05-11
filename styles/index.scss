@@ -45,7 +45,7 @@ $color-name: "violet";
     xxl:
       (
         breakpoint: 1536px,
-        viewport: 1044px,
+        viewport: 967px,
         root-font-size: 131.25%,
       )
   ),
@@ -106,6 +106,8 @@ nav {
   display: flex;
   flex-wrap: wrap;
   margin-top: 1em;
+  font-family: 'Lambda';
+  --pico-font-family: 'Lambda';
 
   h1 {
     --pico-font-family: 'Robtronika';
@@ -113,13 +115,13 @@ nav {
     margin-bottom: auto;
     a {
       --pico-color: --pico-color; // what?
-    }
+    }  
   }
 
-  ul > li > a {
+}
+
+.main-nav > ul > li > a {
     padding-left: 0px; // ugh. fix this
-    font-family: 'Lambda';
-  }
 }
 
 hgroup {
@@ -130,7 +132,7 @@ hgroup {
 }
 
 footer {
-  font-size: 0.75em;
+  font-family: 'Lambda' !important;
 }
 
 .main-header {
@@ -151,4 +153,13 @@ footer {
     color: var(--pico-muted-color) !important;
     font-size: 1rem;
   }
+}
+
+.postlist {
+  h3 { font-family: "Lambda"; } 
+  nav li {padding-top: 0px;}
+}
+
+.grid {
+  h2 {font-family: "Lambda";}
 }

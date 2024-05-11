@@ -1,0 +1,28 @@
+<div class="grid postlist">
+  <aside>
+    <h3>Categories</h3>
+    <nav>
+      <ul>
+        {% if viewingTag %}
+          <li><a href="/posts">See all posts</a></li>
+        {% endif %}
+        {% for t in taglist %}
+          <li>
+          {% if viewingTag and viewingTag == t %}
+            <b>{{t}}</b>
+          {% else %}
+            {{ t | taglink }}
+          {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+  <div class="posts">
+    {% for p in postlist %}
+    <section>
+	{% render 'postpreview.html', post: p.data, url: p.url %}
+    </section>
+    {% endfor %}
+  </div>
+</div>

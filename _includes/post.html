@@ -2,13 +2,11 @@
 layout: root.html
 ---
 
-{% assign ptags = tags | where_exp: "tag", "tag != 'post'" %}
-
 <hgroup class="main-header">
   <h1> {{ title }}</h1>
-  <h2> Published on {{ date | hrdate }} 
-    {% if ptags.length != 0 %}
-     in {{ ptags | join: ", "}}
+  <h2> Published on {{ date | hrdate }} in 
+    {% if tags.length != 1 %}
+      {{ tags | lstags }} 
     {% endif %}
     {% if amended %}
     — Last updated on {{ amended | hrdate }}
