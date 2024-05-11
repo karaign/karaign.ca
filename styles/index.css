@@ -692,7 +692,7 @@ section {
 }
 @media (min-width: 1536px) {
   .container {
-    max-width: 1044px;
+    max-width: 967px;
   }
 }
 
@@ -6812,6 +6812,8 @@ nav {
   display: flex;
   flex-wrap: wrap;
   margin-top: 1em;
+  font-family: "Lambda";
+  --pico-font-family: "Lambda";
 }
 nav h1 {
   --pico-font-family: "Robtronika";
@@ -6821,19 +6823,48 @@ nav h1 {
 nav h1 a {
   --pico-color: --pico-color;
 }
-nav ul > li > a {
+
+.main-nav > ul > li > a {
   padding-left: 0px;
-  font-family: "Lambda";
 }
 
 hgroup {
   --pico-font-family: "Lambda";
-  padding-bottom: var(--pico-block-spacing-vertical);
 }
 hgroup h1 {
   --pico-font-size: 250% ;
 }
 
 footer {
-  font-size: 0.75em;
+  font-family: "Lambda" !important;
+}
+
+.main-header {
+  padding-bottom: var(--pico-block-spacing-vertical);
+}
+
+.proj-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.proj-header .proj-details {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.proj-header .proj-details > h3 {
+  text-align: right;
+  color: var(--pico-muted-color) !important;
+  font-size: 1rem;
+}
+
+.postlist h3 {
+  font-family: "Lambda";
+}
+.postlist nav li {
+  padding-top: 0px;
+}
+
+.grid h2 {
+  font-family: "Lambda";
 }
