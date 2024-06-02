@@ -1,6 +1,6 @@
 @use "sass:map";
 
-$color-name: "violet";
+$color-name: "pink";
 
 //TODO: Optimize CSS output by only loading necessary sheets
 @use "pico" with (
@@ -132,7 +132,13 @@ hgroup {
 }
 
 footer {
+  display: flex;
+  justify-content: space-between;
   font-family: 'Lambda' !important;
+}
+
+.license {
+  color: var(--pico-secondary);
 }
 
 .main-header {
